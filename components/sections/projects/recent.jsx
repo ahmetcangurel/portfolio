@@ -8,7 +8,11 @@ import Icon from "../../utils/icon.util";
 
 import css from "../../../styles/sections/projects/recent.module.scss";
 
-export default function GitProjects({ repos, user }) {
+export default function GitProjects({ repos = [], user = [{}] }) {
+  const avatarUrl = user[0]?.avatar_url || "/img/github-default.png";
+  const userName = user[0]?.name || "GitHub User";
+  const userUrl = user[0]?.html_url || "https://github.com";
+
   return (
     <Section classProp={css.section}>
       <Container classProp={css.container} spacing={"verticalXXXLrg"}>
@@ -16,74 +20,82 @@ export default function GitProjects({ repos, user }) {
         <section className={css.profile}>
           <Image
             className={css.profilePhoto}
-            src={`${user[0].avatar_url}`}
+            src={avatarUrl}
             alt="Github Profile Photo"
             height={60}
             width={60}
           />
-          <span class={css.details}>
-            <p>{user[0].name}</p>
-            <a href={user[0].html_url} rel="noreferrer" target="_blank">
-              {user[0].html_url}{" "}
-              <Icon icon={["far", "arrow-up-right-from-square"]} />
+          <span className={css.details}>
+            <p>{userName}</p>
+            <a href={userUrl} rel="noreferrer" target="_blank">
+              {userUrl} <Icon icon={["far", "arrow-up-right-from-square"]} />
             </a>
           </span>
         </section>
         <div className={css.projects}>
-          {repos.map(
-            (
-              {
-                name,
-                description,
-                topics,
-                forks_count,
-                html_url,
-                language,
-                watchers,
-                homepage,
-                pushed_at,
-              },
-              index
-            ) => {
-              const date = new Date(pushed_at).toDateString();
-              console.log(language);
-              return (
-                <>
+          {Array.isArray(repos) &&
+            repos.map(
+              (
+                {
+                  name = "",
+                  description = "",
+                  topics = [],
+                  forks_count = 0,
+                  html_url = "",
+                  language = "",
+                  watchers = 0,
+                  homepage = "",
+                  pushed_at = "",
+                },
+                index
+              ) => {
+                const date = pushed_at
+                  ? new Date(pushed_at).toDateString()
+                  : "";
+                return (
                   <article key={index} className={css.project}>
                     <span className={css.header}>
                       <a href={html_url} rel="noreferrer" target="_blank">
                         {name}{" "}
                         <Icon icon={["fad", "arrow-up-right-from-square"]} />
                       </a>
-                      <p className={css.homepage}>{homepage}</p>
+                      {homepage && <p className={css.homepage}>{homepage}</p>}
                     </span>
-                    <span className={css.descriptionContainer}>
-                      <p className={css.description}>{description}</p>
-                    </span>
+                    {description && (
+                      <span className={css.descriptionContainer}>
+                        <p className={css.description}>{description}</p>
+                      </span>
+                    )}
                     <span className={css.details}>
-                      {/* <p><i className={`devicon-${language.toLowerCase()}-plain colored`} /> {language}</p> */}
+                      {language && (
+                        <p>
+                          <i
+                            className={`devicon-${language.toLowerCase()}-plain colored`}
+                          />{" "}
+                          {language}
+                        </p>
+                      )}
                       <p>
                         <Icon icon={["fad", "star"]} /> {watchers}
                       </p>
                       <p>
                         <Icon icon={["fad", "code-branch"]} /> {forks_count}
                       </p>
-                      <p className={css.pushedAt}>{date}</p>
+                      {date && <p className={css.pushedAt}>{date}</p>}
                     </span>
-                    <span className={css.topicsContainer}>
-                      {topics.map((e, index) => {
-                        return (
+                    {topics.length > 0 && (
+                      <span className={css.topicsContainer}>
+                        {topics.map((e, index) => (
                           <span key={index} className={css.topics}>
-                            <i class="devicon-github-plain"></i> {e}
+                            <i className="devicon-github-plain" /> {e}
                           </span>
-                        );
-                      })}
-                    </span>
+                        ))}
+                      </span>
+                    )}
                   </article>
-                </>
-              );
-            }
-          )}
+                );
+              }
+            )}
         </div>
         {/*
 				<pre>{ JSON.stringify(user, undefined, 2) }</pre>
