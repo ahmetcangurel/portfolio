@@ -24,6 +24,7 @@ export default function GitProjects({ repos, user }) {
 					{
 					repos.map( ({ name, description, topics, forks_count, html_url, language, watchers, homepage, pushed_at }, index) => {
 						const date = new Date(pushed_at).toDateString()
+						console.log(language)
 						return (
 							<>
 							<article key={index} className={css.project}>
@@ -35,7 +36,7 @@ export default function GitProjects({ repos, user }) {
 									<p className={css.description}>{description}</p>
 								</span>
 								<span className={css.details}>
-									<p><i className={`devicon-${language.toLowerCase()}-plain colored`} /> {language}</p>
+									{/* <p><i className={`devicon-${language.toLowerCase()}-plain colored`} /> {language}</p> */}
 									<p><Icon icon={[ 'fad', 'star' ]} /> {watchers}</p>
 									<p><Icon icon={[ 'fad', 'code-branch' ]} /> {forks_count}</p>
 									<p className={css.pushedAt}>{date}</p>
