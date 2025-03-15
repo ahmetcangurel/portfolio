@@ -1,226 +1,225 @@
-[
-    {
-      title: 'React Native 0.76: Yeni Mimarinin Gücü',
-      pubDate: '2024-10-25 11:33:55',
-      link: 'https://medium.com/@cangurel.dev/react-native-0-76-yeni-mimarinin-g%C3%BCc%C3%BC-13204ed654d8?source=rss-8a6773e97c0d------2',
-      guid: 'https://medium.com/p/13204ed654d8',
-      author: 'Can Gurel',
-      thumbnail: '',
-      description: '\n' +
-        '<p>React Native dünyasında heyecan verici bir döneme tanıklık ediyoruz. Altı yıllık yoğun bir geliştirme sürecinin ardından, React Native 0.76 sürümü ile Yeni Mimari artık varsayılan olarak karşımıza çıkıyor. Bu önemli güncelleme, mobil uygulama geliştirme dünyasında yeni bir sayfa açarken, geliştiricilere sunduğu araçlar ve performans iyileştirmeleriyle de dikkat çekiyor.</p>\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*KGX5gK7rXC4Tsy5yR45SxQ.png"></figure><h3>Yeni Mimari: Performans ve Verimlilik</h3>\n' +
-        '<p>Bu mimari, özellikle uygulamaların bakımını ve ölçeklenebilirliğini iyileştirmeyi amaçlıyor. Yeni yapı sayesinde modülerlik artıyor ve performans iyileştirmeleri daha belirgin hale geliyor. Ayrıca geliştiriciler, uygulama kodları üzerinde daha fazla kontrol sahibi oluyor, bu da genişletilebilirlik açısından büyük avantaj sağlıyor.</p>\n' +
-        '<p>Yeni mimari, React Native’in <strong>Fabric</strong> ve <strong>TurboModules</strong> gibi bileşenlerini daha etkin kullanarak bellek yönetimini ve bileşenler arası iletişimi optimize ediyor. <strong>Fabric</strong>, özellikle UI işleme performansını iyileştirirken, <strong>TurboModules</strong>, yerel kodun React Native kodu ile etkileşimini daha hızlı hale getiriyor. Bu gelişmelerle, uygulamaların daha hızlı çalışması ve daha az bellek tüketmesi sağlanıyor.</p>\n' +
-        `<pre>// TurboModule kullanım örneği<br>import type { TurboModule } from "react-native/Libraries/TurboModule/RCTExport";<br>import {TurboModuleRegistry} from 'react-native';<br><br>interface CalcModule extends TurboModule {<br>  add(a: number, b: number): Promise&lt;number&gt;;<br>}<br><br>const calculator = TurboModuleRegistry.get&lt;CalcModule&gt;('Calculator');</pre>\n` +
-        '<h3>DevTools: Geliştirici Deneyiminde Yeni Dönem</h3>\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*HBzfBkn6MmpWAK3POqnykQ.jpeg"></figure><p>React Native 0.76 ile gelen en önemli yeniliklerden biri de geliştirilmiş DevTools desteği. Flipper entegrasyonu ve yeni debugging özellikleriyle, uygulama geliştirme süreci artık çok daha verimli.</p>\n' +
-        '<p>Chrome DevTools tabanlı yeni arayüz, geliştiricilerin aşina olduğu bir ortamda çalışmalarını sağlarken, gelişmiş component inspector ve performance profiler araçları, sorunları hızlıca tespit etme ve çözme imkanı sunuyor.</p>\n' +
-        '<h3>Metro: Hız ve Optimizasyon</h3>\n' +
-        '<p>React Native’in temel build sistemi olan <strong>Metro</strong> da bu sürümde ciddi iyileştirmeler aldı. Metro’nun modül çözümleme performansı, önceki sürümlere kıyasla <strong>15 kat daha hızlı</strong> hale getirildi. Ayrıca, <strong>warm build</strong> adı verilen süreçlerde de <strong>4 kat</strong> performans artışı sağlandı.</p>\n' +
-        '<p>Bu geliştirmeler, özellikle proje boyutu arttıkça build süreçlerinin hızlanmasına yardımcı oluyor, böylece daha proje test süreçleri büyük ölçüde kısalıyor..</p>\n' +
-        '<p><em>Metro’nun X üzerinden yaptığı paylaşıma </em><a href="https://x.com/MetroBundler/status/1831709057670861260"><em>buradan</em></a><em> ulaşabilirsiniz.</em></p>\n' +
-        '<h3>Modern Stil Özellikleri</h3>\n' +
-        '<p>React Native 0.76 sürümünde, CSS benzeri stil özellikleri de genişletildi. Artık <strong>boxShadow</strong> ve <strong>filter</strong> gibi özelliklerle kullanıcı arayüzlerinizi daha modern ve dinamik hale getirebilirsiniz.</p>\n' +
-        '<blockquote>Tüm yenilikler arasında en sevdiğim kısım stil güncellemeleri oldu :)</blockquote>\n' +
-        "<pre>// String syntax<br>boxShadow: '5 5 5 0 rgba(255, 0, 0, 0.5)'<br><br>// Object syntax<br>boxShadow: {<br>  offsetX: 5,<br>  offsetY: 5,<br>  blurRadius: 5,<br>  spreadDistance: 0,<br>  color: 'rgba(255, 0, 0, 0.5)'<br>}</pre>\n" +
-        `<figure><img alt="" src="https://cdn-images-1.medium.com/max/794/1*3YGeHES1olz2YLcG0PF3Uw.png"></figure><pre>// String syntax<br>filter: 'saturate(0.5) grayscale(0.25)'<br><br>// Array syntax<br>filter: [{saturate: 0.5}, {grayscale: 0.25}]</pre>\n` +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Pzc4__sVuYcKzgp1xPAKAw.png"></figure><h3>Platform Spesifik İyileştirmeler</h3>\n' +
-        '<h4>iOS Tarafında</h4>\n' +
-        '<ul>\n' +
-        '<li>iOS 15.1 minimum sürüm desteği</li>\n' +
-        '<li>CocoaPods 1.15+ entegrasyonu</li>\n' +
-        '<li>M1/M2 Mac optimizasyonları</li>\n' +
-        '</ul>\n' +
-        '<h4>Android Cephesinde</h4>\n' +
-        '<ul>\n' +
-        '<li>SDK 24 (Android 7.0) minimum gereksinimi</li>\n' +
-        '<li>Tek native kütüphane ile 3.8MB boyut optimizasyonu</li>\n' +
-        '<li>%8 daha hızlı uygulama başlatma süresi</li>\n' +
-        '</ul>\n' +
-        '<h3>Geliştirici Notları ve Önemli Değişiklikler</h3>\n' +
-        "<p>React Native 0.76'ya geçiş yaparken dikkat edilmesi gereken bazı önemli noktalar var:</p>\n" +
-        '<ul>\n' +
-        '<li>Node.js 18+ gereksinimi</li>\n' +
-        '<li>CLI’ın artık ayrı bir bağımlılık olarak yüklenmesi gerekliliği</li>\n' +
-        '<li>Gradle 8.3 desteği</li>\n' +
-        '</ul>\n' +
-        '<h3>Geleceğe Bakış</h3>\n' +
-        '<p>React Native 0.76, framework’ün geleceği için sağlam bir temel oluşturuyor. Yeni Mimari’nin varsayılan hale gelmesiyle birlikte, React Native ekosistemi artık daha olgun ve güvenilir bir platform haline geldi.</p>\n' +
-        '<p>Bu güncelleme, özellikle büyük ölçekli uygulamalar geliştiren ekipler için önemli avantajlar sunuyor. Performans iyileştirmeleri, gelişmiş geliştirici araçları ve modern stil özellikleriyle React Native, mobil uygulama geliştirme dünyasında lider konumunu güçlendiriyor.</p>\n' +
-        '<h3>Sonuç</h3>\n' +
-        '<p>React Native 0.76, sadece bir güncelleme değil, framework’ün geleceğini şekillendiren önemli bir dönüm noktası. Yeni Mimari’nin getirdiği güç ve esneklik, geliştiricilere daha verimli ve keyifli bir geliştirme deneyimi sunarken, son kullanıcılara da daha performanslı uygulamalar vaat ediyor.</p>\n' +
-        '<blockquote>Son olarak bu güncellemeler her ne kadar uzun zamanlar alsa da <strong>Flutter</strong> ve <strong>React Native</strong> arasındaki rekabet, topluluğun yararına oluyor. Umarım bu rekabet hiç sonlanmaz ve geliştirme için bir ateş olur.</blockquote>\n' +
-        '<h3>Faydalı Kaynaklar</h3>\n' +
-        '<ul>\n' +
-        '<li><a href="https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture">React Native Resmi Blog</a></li>\n' +
-        '<li><a href="https://reactnative.dev/docs/new-architecture-intro">Yeni Mimari Dokümantasyonu</a></li>\n' +
-        '<li><a href="https://github.com/facebook/react-native">React Native GitHub</a></li>\n' +
-        '</ul>\n' +
-        '<p>#ReactNative #JavaScript #MobileDevelopment #NewArchitecture #ReactNativeUpdate #DevTools #MobileApp #Programming</p>\n' +
-        '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=13204ed654d8" width="1" height="1" alt="">\n',
-      content: '\n' +
-        '<p>React Native dünyasında heyecan verici bir döneme tanıklık ediyoruz. Altı yıllık yoğun bir geliştirme sürecinin ardından, React Native 0.76 sürümü ile Yeni Mimari artık varsayılan olarak karşımıza çıkıyor. Bu önemli güncelleme, mobil uygulama geliştirme dünyasında yeni bir sayfa açarken, geliştiricilere sunduğu araçlar ve performans iyileştirmeleriyle de dikkat çekiyor.</p>\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*KGX5gK7rXC4Tsy5yR45SxQ.png"></figure><h3>Yeni Mimari: Performans ve Verimlilik</h3>\n' +
-        '<p>Bu mimari, özellikle uygulamaların bakımını ve ölçeklenebilirliğini iyileştirmeyi amaçlıyor. Yeni yapı sayesinde modülerlik artıyor ve performans iyileştirmeleri daha belirgin hale geliyor. Ayrıca geliştiriciler, uygulama kodları üzerinde daha fazla kontrol sahibi oluyor, bu da genişletilebilirlik açısından büyük avantaj sağlıyor.</p>\n' +
-        '<p>Yeni mimari, React Native’in <strong>Fabric</strong> ve <strong>TurboModules</strong> gibi bileşenlerini daha etkin kullanarak bellek yönetimini ve bileşenler arası iletişimi optimize ediyor. <strong>Fabric</strong>, özellikle UI işleme performansını iyileştirirken, <strong>TurboModules</strong>, yerel kodun React Native kodu ile etkileşimini daha hızlı hale getiriyor. Bu gelişmelerle, uygulamaların daha hızlı çalışması ve daha az bellek tüketmesi sağlanıyor.</p>\n' +
-        `<pre>// TurboModule kullanım örneği<br>import type { TurboModule } from "react-native/Libraries/TurboModule/RCTExport";<br>import {TurboModuleRegistry} from 'react-native';<br><br>interface CalcModule extends TurboModule {<br>  add(a: number, b: number): Promise&lt;number&gt;;<br>}<br><br>const calculator = TurboModuleRegistry.get&lt;CalcModule&gt;('Calculator');</pre>\n` +
-        '<h3>DevTools: Geliştirici Deneyiminde Yeni Dönem</h3>\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*HBzfBkn6MmpWAK3POqnykQ.jpeg"></figure><p>React Native 0.76 ile gelen en önemli yeniliklerden biri de geliştirilmiş DevTools desteği. Flipper entegrasyonu ve yeni debugging özellikleriyle, uygulama geliştirme süreci artık çok daha verimli.</p>\n' +
-        '<p>Chrome DevTools tabanlı yeni arayüz, geliştiricilerin aşina olduğu bir ortamda çalışmalarını sağlarken, gelişmiş component inspector ve performance profiler araçları, sorunları hızlıca tespit etme ve çözme imkanı sunuyor.</p>\n' +
-        '<h3>Metro: Hız ve Optimizasyon</h3>\n' +
-        '<p>React Native’in temel build sistemi olan <strong>Metro</strong> da bu sürümde ciddi iyileştirmeler aldı. Metro’nun modül çözümleme performansı, önceki sürümlere kıyasla <strong>15 kat daha hızlı</strong> hale getirildi. Ayrıca, <strong>warm build</strong> adı verilen süreçlerde de <strong>4 kat</strong> performans artışı sağlandı.</p>\n' +
-        '<p>Bu geliştirmeler, özellikle proje boyutu arttıkça build süreçlerinin hızlanmasına yardımcı oluyor, böylece daha proje test süreçleri büyük ölçüde kısalıyor..</p>\n' +
-        '<p><em>Metro’nun X üzerinden yaptığı paylaşıma </em><a href="https://x.com/MetroBundler/status/1831709057670861260"><em>buradan</em></a><em> ulaşabilirsiniz.</em></p>\n' +
-        '<h3>Modern Stil Özellikleri</h3>\n' +
-        '<p>React Native 0.76 sürümünde, CSS benzeri stil özellikleri de genişletildi. Artık <strong>boxShadow</strong> ve <strong>filter</strong> gibi özelliklerle kullanıcı arayüzlerinizi daha modern ve dinamik hale getirebilirsiniz.</p>\n' +
-        '<blockquote>Tüm yenilikler arasında en sevdiğim kısım stil güncellemeleri oldu :)</blockquote>\n' +
-        "<pre>// String syntax<br>boxShadow: '5 5 5 0 rgba(255, 0, 0, 0.5)'<br><br>// Object syntax<br>boxShadow: {<br>  offsetX: 5,<br>  offsetY: 5,<br>  blurRadius: 5,<br>  spreadDistance: 0,<br>  color: 'rgba(255, 0, 0, 0.5)'<br>}</pre>\n" +
-        `<figure><img alt="" src="https://cdn-images-1.medium.com/max/794/1*3YGeHES1olz2YLcG0PF3Uw.png"></figure><pre>// String syntax<br>filter: 'saturate(0.5) grayscale(0.25)'<br><br>// Array syntax<br>filter: [{saturate: 0.5}, {grayscale: 0.25}]</pre>\n` +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Pzc4__sVuYcKzgp1xPAKAw.png"></figure><h3>Platform Spesifik İyileştirmeler</h3>\n' +
-        '<h4>iOS Tarafında</h4>\n' +
-        '<ul>\n' +
-        '<li>iOS 15.1 minimum sürüm desteği</li>\n' +
-        '<li>CocoaPods 1.15+ entegrasyonu</li>\n' +
-        '<li>M1/M2 Mac optimizasyonları</li>\n' +
-        '</ul>\n' +
-        '<h4>Android Cephesinde</h4>\n' +
-        '<ul>\n' +
-        '<li>SDK 24 (Android 7.0) minimum gereksinimi</li>\n' +
-        '<li>Tek native kütüphane ile 3.8MB boyut optimizasyonu</li>\n' +
-        '<li>%8 daha hızlı uygulama başlatma süresi</li>\n' +
-        '</ul>\n' +
-        '<h3>Geliştirici Notları ve Önemli Değişiklikler</h3>\n' +
-        "<p>React Native 0.76'ya geçiş yaparken dikkat edilmesi gereken bazı önemli noktalar var:</p>\n" +
-        '<ul>\n' +
-        '<li>Node.js 18+ gereksinimi</li>\n' +
-        '<li>CLI’ın artık ayrı bir bağımlılık olarak yüklenmesi gerekliliği</li>\n' +
-        '<li>Gradle 8.3 desteği</li>\n' +
-        '</ul>\n' +
-        '<h3>Geleceğe Bakış</h3>\n' +
-        '<p>React Native 0.76, framework’ün geleceği için sağlam bir temel oluşturuyor. Yeni Mimari’nin varsayılan hale gelmesiyle birlikte, React Native ekosistemi artık daha olgun ve güvenilir bir platform haline geldi.</p>\n' +
-        '<p>Bu güncelleme, özellikle büyük ölçekli uygulamalar geliştiren ekipler için önemli avantajlar sunuyor. Performans iyileştirmeleri, gelişmiş geliştirici araçları ve modern stil özellikleriyle React Native, mobil uygulama geliştirme dünyasında lider konumunu güçlendiriyor.</p>\n' +
-        '<h3>Sonuç</h3>\n' +
-        '<p>React Native 0.76, sadece bir güncelleme değil, framework’ün geleceğini şekillendiren önemli bir dönüm noktası. Yeni Mimari’nin getirdiği güç ve esneklik, geliştiricilere daha verimli ve keyifli bir geliştirme deneyimi sunarken, son kullanıcılara da daha performanslı uygulamalar vaat ediyor.</p>\n' +
-        '<blockquote>Son olarak bu güncellemeler her ne kadar uzun zamanlar alsa da <strong>Flutter</strong> ve <strong>React Native</strong> arasındaki rekabet, topluluğun yararına oluyor. Umarım bu rekabet hiç sonlanmaz ve geliştirme için bir ateş olur.</blockquote>\n' +
-        '<h3>Faydalı Kaynaklar</h3>\n' +
-        '<ul>\n' +
-        '<li><a href="https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture">React Native Resmi Blog</a></li>\n' +
-        '<li><a href="https://reactnative.dev/docs/new-architecture-intro">Yeni Mimari Dokümantasyonu</a></li>\n' +
-        '<li><a href="https://github.com/facebook/react-native">React Native GitHub</a></li>\n' +
-        '</ul>\n' +
-        '<p>#ReactNative #JavaScript #MobileDevelopment #NewArchitecture #ReactNativeUpdate #DevTools #MobileApp #Programming</p>\n' +
-        '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=13204ed654d8" width="1" height="1" alt="">\n',
-      enclosure: {},
-      categories: [ 'javascript', 'react', 'expo', 'react-native', 'typescript' ]
+[{
+        title: 'React Native 0.76: Yeni Mimarinin Gücü',
+        pubDate: '2024-10-25 11:33:55',
+        link: 'https://medium.com/@cangurel.dev/react-native-0-76-yeni-mimarinin-g%C3%BCc%C3%BC-13204ed654d8?source=rss-8a6773e97c0d------2',
+        guid: 'https://medium.com/p/13204ed654d8',
+        author: 'Can Gurel',
+        thumbnail: '',
+        description: '\n' +
+            '<p>React Native dünyasında heyecan verici bir döneme tanıklık ediyoruz. Altı yıllık yoğun bir geliştirme sürecinin ardından, React Native 0.76 sürümü ile Yeni Mimari artık varsayılan olarak karşımıza çıkıyor. Bu önemli güncelleme, mobil uygulama geliştirme dünyasında yeni bir sayfa açarken, geliştiricilere sunduğu araçlar ve performans iyileştirmeleriyle de dikkat çekiyor.</p>\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*KGX5gK7rXC4Tsy5yR45SxQ.png"></figure><h3>Yeni Mimari: Performans ve Verimlilik</h3>\n' +
+            '<p>Bu mimari, özellikle uygulamaların bakımını ve ölçeklenebilirliğini iyileştirmeyi amaçlıyor. Yeni yapı sayesinde modülerlik artıyor ve performans iyileştirmeleri daha belirgin hale geliyor. Ayrıca geliştiriciler, uygulama kodları üzerinde daha fazla kontrol sahibi oluyor, bu da genişletilebilirlik açısından büyük avantaj sağlıyor.</p>\n' +
+            '<p>Yeni mimari, React Native’in <strong>Fabric</strong> ve <strong>TurboModules</strong> gibi bileşenlerini daha etkin kullanarak bellek yönetimini ve bileşenler arası iletişimi optimize ediyor. <strong>Fabric</strong>, özellikle UI işleme performansını iyileştirirken, <strong>TurboModules</strong>, yerel kodun React Native kodu ile etkileşimini daha hızlı hale getiriyor. Bu gelişmelerle, uygulamaların daha hızlı çalışması ve daha az bellek tüketmesi sağlanıyor.</p>\n' +
+            `<pre>// TurboModule kullanım örneği<br>import type { TurboModule } from "react-native/Libraries/TurboModule/RCTExport";<br>import {TurboModuleRegistry} from 'react-native';<br><br>interface CalcModule extends TurboModule {<br>  add(a: number, b: number): Promise&lt;number&gt;;<br>}<br><br>const calculator = TurboModuleRegistry.get&lt;CalcModule&gt;('Calculator');</pre>\n` +
+            '<h3>DevTools: Geliştirici Deneyiminde Yeni Dönem</h3>\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*HBzfBkn6MmpWAK3POqnykQ.jpeg"></figure><p>React Native 0.76 ile gelen en önemli yeniliklerden biri de geliştirilmiş DevTools desteği. Flipper entegrasyonu ve yeni debugging özellikleriyle, uygulama geliştirme süreci artık çok daha verimli.</p>\n' +
+            '<p>Chrome DevTools tabanlı yeni arayüz, geliştiricilerin aşina olduğu bir ortamda çalışmalarını sağlarken, gelişmiş component inspector ve performance profiler araçları, sorunları hızlıca tespit etme ve çözme imkanı sunuyor.</p>\n' +
+            '<h3>Metro: Hız ve Optimizasyon</h3>\n' +
+            '<p>React Native’in temel build sistemi olan <strong>Metro</strong> da bu sürümde ciddi iyileştirmeler aldı. Metro’nun modül çözümleme performansı, önceki sürümlere kıyasla <strong>15 kat daha hızlı</strong> hale getirildi. Ayrıca, <strong>warm build</strong> adı verilen süreçlerde de <strong>4 kat</strong> performans artışı sağlandı.</p>\n' +
+            '<p>Bu geliştirmeler, özellikle proje boyutu arttıkça build süreçlerinin hızlanmasına yardımcı oluyor, böylece daha proje test süreçleri büyük ölçüde kısalıyor..</p>\n' +
+            '<p><em>Metro’nun X üzerinden yaptığı paylaşıma </em><a href="https://x.com/MetroBundler/status/1831709057670861260"><em>buradan</em></a><em> ulaşabilirsiniz.</em></p>\n' +
+            '<h3>Modern Stil Özellikleri</h3>\n' +
+            '<p>React Native 0.76 sürümünde, CSS benzeri stil özellikleri de genişletildi. Artık <strong>boxShadow</strong> ve <strong>filter</strong> gibi özelliklerle kullanıcı arayüzlerinizi daha modern ve dinamik hale getirebilirsiniz.</p>\n' +
+            '<blockquote>Tüm yenilikler arasında en sevdiğim kısım stil güncellemeleri oldu :)</blockquote>\n' +
+            "<pre>// String syntax<br>boxShadow: '5 5 5 0 rgba(255, 0, 0, 0.5)'<br><br>// Object syntax<br>boxShadow: {<br>  offsetX: 5,<br>  offsetY: 5,<br>  blurRadius: 5,<br>  spreadDistance: 0,<br>  color: 'rgba(255, 0, 0, 0.5)'<br>}</pre>\n" +
+            `<figure><img alt="" src="https://cdn-images-1.medium.com/max/794/1*3YGeHES1olz2YLcG0PF3Uw.png"></figure><pre>// String syntax<br>filter: 'saturate(0.5) grayscale(0.25)'<br><br>// Array syntax<br>filter: [{saturate: 0.5}, {grayscale: 0.25}]</pre>\n` +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Pzc4__sVuYcKzgp1xPAKAw.png"></figure><h3>Platform Spesifik İyileştirmeler</h3>\n' +
+            '<h4>iOS Tarafında</h4>\n' +
+            '<ul>\n' +
+            '<li>iOS 15.1 minimum sürüm desteği</li>\n' +
+            '<li>CocoaPods 1.15+ entegrasyonu</li>\n' +
+            '<li>M1/M2 Mac optimizasyonları</li>\n' +
+            '</ul>\n' +
+            '<h4>Android Cephesinde</h4>\n' +
+            '<ul>\n' +
+            '<li>SDK 24 (Android 7.0) minimum gereksinimi</li>\n' +
+            '<li>Tek native kütüphane ile 3.8MB boyut optimizasyonu</li>\n' +
+            '<li>%8 daha hızlı uygulama başlatma süresi</li>\n' +
+            '</ul>\n' +
+            '<h3>Geliştirici Notları ve Önemli Değişiklikler</h3>\n' +
+            "<p>React Native 0.76'ya geçiş yaparken dikkat edilmesi gereken bazı önemli noktalar var:</p>\n" +
+            '<ul>\n' +
+            '<li>Node.js 18+ gereksinimi</li>\n' +
+            '<li>CLI’ın artık ayrı bir bağımlılık olarak yüklenmesi gerekliliği</li>\n' +
+            '<li>Gradle 8.3 desteği</li>\n' +
+            '</ul>\n' +
+            '<h3>Geleceğe Bakış</h3>\n' +
+            '<p>React Native 0.76, framework’ün geleceği için sağlam bir temel oluşturuyor. Yeni Mimari’nin varsayılan hale gelmesiyle birlikte, React Native ekosistemi artık daha olgun ve güvenilir bir platform haline geldi.</p>\n' +
+            '<p>Bu güncelleme, özellikle büyük ölçekli uygulamalar geliştiren ekipler için önemli avantajlar sunuyor. Performans iyileştirmeleri, gelişmiş geliştirici araçları ve modern stil özellikleriyle React Native, mobil uygulama geliştirme dünyasında lider konumunu güçlendiriyor.</p>\n' +
+            '<h3>Sonuç</h3>\n' +
+            '<p>React Native 0.76, sadece bir güncelleme değil, framework’ün geleceğini şekillendiren önemli bir dönüm noktası. Yeni Mimari’nin getirdiği güç ve esneklik, geliştiricilere daha verimli ve keyifli bir geliştirme deneyimi sunarken, son kullanıcılara da daha performanslı uygulamalar vaat ediyor.</p>\n' +
+            '<blockquote>Son olarak bu güncellemeler her ne kadar uzun zamanlar alsa da <strong>Flutter</strong> ve <strong>React Native</strong> arasındaki rekabet, topluluğun yararına oluyor. Umarım bu rekabet hiç sonlanmaz ve geliştirme için bir ateş olur.</blockquote>\n' +
+            '<h3>Faydalı Kaynaklar</h3>\n' +
+            '<ul>\n' +
+            '<li><a href="https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture">React Native Resmi Blog</a></li>\n' +
+            '<li><a href="https://reactnative.dev/docs/new-architecture-intro">Yeni Mimari Dokümantasyonu</a></li>\n' +
+            '<li><a href="https://github.com/facebook/react-native">React Native GitHub</a></li>\n' +
+            '</ul>\n' +
+            '<p>#ReactNative #JavaScript #MobileDevelopment #NewArchitecture #ReactNativeUpdate #DevTools #MobileApp #Programming</p>\n' +
+            '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=13204ed654d8" width="1" height="1" alt="">\n',
+        content: '\n' +
+            '<p>React Native dünyasında heyecan verici bir döneme tanıklık ediyoruz. Altı yıllık yoğun bir geliştirme sürecinin ardından, React Native 0.76 sürümü ile Yeni Mimari artık varsayılan olarak karşımıza çıkıyor. Bu önemli güncelleme, mobil uygulama geliştirme dünyasında yeni bir sayfa açarken, geliştiricilere sunduğu araçlar ve performans iyileştirmeleriyle de dikkat çekiyor.</p>\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*KGX5gK7rXC4Tsy5yR45SxQ.png"></figure><h3>Yeni Mimari: Performans ve Verimlilik</h3>\n' +
+            '<p>Bu mimari, özellikle uygulamaların bakımını ve ölçeklenebilirliğini iyileştirmeyi amaçlıyor. Yeni yapı sayesinde modülerlik artıyor ve performans iyileştirmeleri daha belirgin hale geliyor. Ayrıca geliştiriciler, uygulama kodları üzerinde daha fazla kontrol sahibi oluyor, bu da genişletilebilirlik açısından büyük avantaj sağlıyor.</p>\n' +
+            '<p>Yeni mimari, React Native’in <strong>Fabric</strong> ve <strong>TurboModules</strong> gibi bileşenlerini daha etkin kullanarak bellek yönetimini ve bileşenler arası iletişimi optimize ediyor. <strong>Fabric</strong>, özellikle UI işleme performansını iyileştirirken, <strong>TurboModules</strong>, yerel kodun React Native kodu ile etkileşimini daha hızlı hale getiriyor. Bu gelişmelerle, uygulamaların daha hızlı çalışması ve daha az bellek tüketmesi sağlanıyor.</p>\n' +
+            `<pre>// TurboModule kullanım örneği<br>import type { TurboModule } from "react-native/Libraries/TurboModule/RCTExport";<br>import {TurboModuleRegistry} from 'react-native';<br><br>interface CalcModule extends TurboModule {<br>  add(a: number, b: number): Promise&lt;number&gt;;<br>}<br><br>const calculator = TurboModuleRegistry.get&lt;CalcModule&gt;('Calculator');</pre>\n` +
+            '<h3>DevTools: Geliştirici Deneyiminde Yeni Dönem</h3>\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*HBzfBkn6MmpWAK3POqnykQ.jpeg"></figure><p>React Native 0.76 ile gelen en önemli yeniliklerden biri de geliştirilmiş DevTools desteği. Flipper entegrasyonu ve yeni debugging özellikleriyle, uygulama geliştirme süreci artık çok daha verimli.</p>\n' +
+            '<p>Chrome DevTools tabanlı yeni arayüz, geliştiricilerin aşina olduğu bir ortamda çalışmalarını sağlarken, gelişmiş component inspector ve performance profiler araçları, sorunları hızlıca tespit etme ve çözme imkanı sunuyor.</p>\n' +
+            '<h3>Metro: Hız ve Optimizasyon</h3>\n' +
+            '<p>React Native’in temel build sistemi olan <strong>Metro</strong> da bu sürümde ciddi iyileştirmeler aldı. Metro’nun modül çözümleme performansı, önceki sürümlere kıyasla <strong>15 kat daha hızlı</strong> hale getirildi. Ayrıca, <strong>warm build</strong> adı verilen süreçlerde de <strong>4 kat</strong> performans artışı sağlandı.</p>\n' +
+            '<p>Bu geliştirmeler, özellikle proje boyutu arttıkça build süreçlerinin hızlanmasına yardımcı oluyor, böylece daha proje test süreçleri büyük ölçüde kısalıyor..</p>\n' +
+            '<p><em>Metro’nun X üzerinden yaptığı paylaşıma </em><a href="https://x.com/MetroBundler/status/1831709057670861260"><em>buradan</em></a><em> ulaşabilirsiniz.</em></p>\n' +
+            '<h3>Modern Stil Özellikleri</h3>\n' +
+            '<p>React Native 0.76 sürümünde, CSS benzeri stil özellikleri de genişletildi. Artık <strong>boxShadow</strong> ve <strong>filter</strong> gibi özelliklerle kullanıcı arayüzlerinizi daha modern ve dinamik hale getirebilirsiniz.</p>\n' +
+            '<blockquote>Tüm yenilikler arasında en sevdiğim kısım stil güncellemeleri oldu :)</blockquote>\n' +
+            "<pre>// String syntax<br>boxShadow: '5 5 5 0 rgba(255, 0, 0, 0.5)'<br><br>// Object syntax<br>boxShadow: {<br>  offsetX: 5,<br>  offsetY: 5,<br>  blurRadius: 5,<br>  spreadDistance: 0,<br>  color: 'rgba(255, 0, 0, 0.5)'<br>}</pre>\n" +
+            `<figure><img alt="" src="https://cdn-images-1.medium.com/max/794/1*3YGeHES1olz2YLcG0PF3Uw.png"></figure><pre>// String syntax<br>filter: 'saturate(0.5) grayscale(0.25)'<br><br>// Array syntax<br>filter: [{saturate: 0.5}, {grayscale: 0.25}]</pre>\n` +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Pzc4__sVuYcKzgp1xPAKAw.png"></figure><h3>Platform Spesifik İyileştirmeler</h3>\n' +
+            '<h4>iOS Tarafında</h4>\n' +
+            '<ul>\n' +
+            '<li>iOS 15.1 minimum sürüm desteği</li>\n' +
+            '<li>CocoaPods 1.15+ entegrasyonu</li>\n' +
+            '<li>M1/M2 Mac optimizasyonları</li>\n' +
+            '</ul>\n' +
+            '<h4>Android Cephesinde</h4>\n' +
+            '<ul>\n' +
+            '<li>SDK 24 (Android 7.0) minimum gereksinimi</li>\n' +
+            '<li>Tek native kütüphane ile 3.8MB boyut optimizasyonu</li>\n' +
+            '<li>%8 daha hızlı uygulama başlatma süresi</li>\n' +
+            '</ul>\n' +
+            '<h3>Geliştirici Notları ve Önemli Değişiklikler</h3>\n' +
+            "<p>React Native 0.76'ya geçiş yaparken dikkat edilmesi gereken bazı önemli noktalar var:</p>\n" +
+            '<ul>\n' +
+            '<li>Node.js 18+ gereksinimi</li>\n' +
+            '<li>CLI’ın artık ayrı bir bağımlılık olarak yüklenmesi gerekliliği</li>\n' +
+            '<li>Gradle 8.3 desteği</li>\n' +
+            '</ul>\n' +
+            '<h3>Geleceğe Bakış</h3>\n' +
+            '<p>React Native 0.76, framework’ün geleceği için sağlam bir temel oluşturuyor. Yeni Mimari’nin varsayılan hale gelmesiyle birlikte, React Native ekosistemi artık daha olgun ve güvenilir bir platform haline geldi.</p>\n' +
+            '<p>Bu güncelleme, özellikle büyük ölçekli uygulamalar geliştiren ekipler için önemli avantajlar sunuyor. Performans iyileştirmeleri, gelişmiş geliştirici araçları ve modern stil özellikleriyle React Native, mobil uygulama geliştirme dünyasında lider konumunu güçlendiriyor.</p>\n' +
+            '<h3>Sonuç</h3>\n' +
+            '<p>React Native 0.76, sadece bir güncelleme değil, framework’ün geleceğini şekillendiren önemli bir dönüm noktası. Yeni Mimari’nin getirdiği güç ve esneklik, geliştiricilere daha verimli ve keyifli bir geliştirme deneyimi sunarken, son kullanıcılara da daha performanslı uygulamalar vaat ediyor.</p>\n' +
+            '<blockquote>Son olarak bu güncellemeler her ne kadar uzun zamanlar alsa da <strong>Flutter</strong> ve <strong>React Native</strong> arasındaki rekabet, topluluğun yararına oluyor. Umarım bu rekabet hiç sonlanmaz ve geliştirme için bir ateş olur.</blockquote>\n' +
+            '<h3>Faydalı Kaynaklar</h3>\n' +
+            '<ul>\n' +
+            '<li><a href="https://reactnative.dev/blog/2024/10/23/release-0.76-new-architecture">React Native Resmi Blog</a></li>\n' +
+            '<li><a href="https://reactnative.dev/docs/new-architecture-intro">Yeni Mimari Dokümantasyonu</a></li>\n' +
+            '<li><a href="https://github.com/facebook/react-native">React Native GitHub</a></li>\n' +
+            '</ul>\n' +
+            '<p>#ReactNative #JavaScript #MobileDevelopment #NewArchitecture #ReactNativeUpdate #DevTools #MobileApp #Programming</p>\n' +
+            '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=13204ed654d8" width="1" height="1" alt="">\n',
+        enclosure: {},
+        categories: ['javascript', 'react', 'expo', 'react-native', 'typescript']
     },
     {
-      title: 'TypeScript: Modern Web Geliştirmenin Güçlü Silahı',
-      pubDate: '2024-10-22 18:26:19',
-      link: 'https://medium.com/@cangurel.dev/typescript-modern-web-geli%C5%9Ftirmenin-g%C3%BC%C3%A7l%C3%BC-silah%C4%B1-a881c6660728?source=rss-8a6773e97c0d------2',
-      guid: 'https://medium.com/p/a881c6660728',
-      author: 'Can Gurel',
-      thumbnail: '',
-      description: '\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/369/1*96-x1bds6xdfklvTorUUlQ@2x.jpeg"></figure><p>JavaScript, web geliştirme dünyasının tartışmasız en popüler dillerinden biri. Ancak büyük ve karmaşık projelerde, JavaScript’in dinamik yapısı ve zayıf tip kontrolü zaman zaman zorluklar çıkarabiliyor. İşte tam bu noktada TypeScript devreye giriyor.</p>\n' +
-        '<h3>TypeScript Nedir?</h3>\n' +
-        '<p>Microsoft tarafından geliştirilen TypeScript, JavaScript’in bir üst kümesi olarak tanımlanabilir. En önemli özelliği, JavaScript’e statik tip desteği eklemesi. Bu özellik, onu özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline getiriyor.</p>\n' +
-        '<h3>Neden TypeScript Kullanmalıyız?</h3>\n' +
-        '<h4>1. Statik Tip Kontrolü</h4>\n' +
-        '<p>TypeScript’in en güçlü yanlarından biri, statik tip kontrolü. JavaScript’te değişkenlerin türü çalışma zamanında belirlenirken, TypeScript ile bu işlemi geliştirme aşamasında yapabiliyoruz. Örneğin:</p>\n' +
-        '<pre>let name: string = "Can";<br>name = 5; <br>// ‘name’ değişkeni string tipinde olduğu için hata verecektir. </pre>\n' +
-        '<p>Bu sayede, potansiyel hataları daha erken yakalayabiliyoruz.</p>\n' +
-        '<h4>2. Gelişmiş Hata Ayıklama</h4>\n' +
-        '<p>Statik tip kontrolü, hata ayıklama sürecini de oldukça kolaylaştırıyor. Derleyici, olası hataları geliştirme aşamasında göstererek, uygulamanın kararlılığını artırıyor.</p>\n' +
-        '<h4>3. Güçlü IDE Desteği</h4>\n' +
-        '<p>TypeScript, modern geliştirme ortamlarıyla mükemmel bir uyum içinde çalışıyor. Özellikle Visual Studio Code gibi editörlerde, IntelliSense özelliği sayesinde daha doğru kod tamamlama önerileri alabiliyoruz.</p>\n' +
-        '<h4>4. Daha İyi Proje Ölçeklenebilirliği</h4>\n' +
-        '<p>Büyük projelerde TypeScript, daha iyi bir kod organizasyonu sağlıyor. OOP kavramlarını kullanarak, projeleri daha yapılandırılmış hale getirebiliyoruz. Bu da takım çalışmasında ve kodun sürdürülebilirliğinde büyük avantaj sağlıyor.</p>\n' +
-        '<h3>TypeScript’in Diğer Avantajları</h3>\n' +
-        '<ul>\n' +
-        '<li>ES6+ Uyumluluğu : TypeScript, modern JavaScript özelliklerini tam olarak destekliyor.</li>\n' +
-        '<li>JavaScript ile Uyumluluk : Herhangi bir JavaScript dosyasını kolayca TypeScript’e dönüştürebilirsiniz.</li>\n' +
-        '<li>Kodun Okunabilirliği : Tip anotasyonları sayesinde, kodun ne yaptığı daha açık hale geliyor.</li>\n' +
-        '</ul>\n' +
-        '<h3>TypeScript’in Temel Özellikleri ve Kullanım Örnekleri</h3>\n' +
-        '<p>TypeScript’in gücünü daha iyi anlamak için bazı temel özelliklerini ve kullanım örneklerini inceleyelim:</p>\n' +
-        '<h4>1. Temel Tipler ile Değişken Tanımlama</h4>\n' +
-        `<pre>let isim: string = "Can";<br>let yas: number = 30;<br>let aktif: boolean = true;<br><br>// isim = 25; // Hata verir, çünkü 'isim' string tipinde tanımlandı.</pre>\n` +
-        '<h4>2. Fonksiyonlarda Tip Belirleme</h4>\n' +
-        '<pre>function toplama(a: number, b: number): number {<br>  return a + b;<br>}<br><br>let sonuc = toplama(5, 10); // Sonuç 15</pre>\n' +
-        '<h4>3. Arayüzler (Interfaces)</h4>\n' +
-        '<pre>interface Kullanici {<br>  isim: string;<br>  yas: number;<br>  aktifMi: boolean;<br>}<br><br>const kullanici: Kullanici = {<br>  isim: "Ahmet",<br>  yas: 25,<br>  aktifMi: true,<br>};</pre>\n' +
-        '<h4>4. Birleşik Tipler (Union Types)</h4>\n' +
-        '<pre>let kimlik: number | string;<br>kimlik = 123;<br>kimlik = "ABC123";</pre>\n' +
-        '<h4>5. Generics</h4>\n' +
-        '<pre>function veriDondur&lt;T&gt;(deger: T): T {<br>  return deger;<br>}<br><br>let sayi = veriDondur&lt;number&gt;(10);<br>let metin = veriDondur&lt;string&gt;("Merhaba");</pre>\n' +
-        '<h4>6. Tip Sorgulama (Type Assertions)</h4>\n' +
-        '<pre>let deger: any = "Merhaba Dünya";<br>let uzunluk: number = (deger as string).length;<br><br>console.log(uzunluk); // 13</pre>\n' +
-        '<h4>7. Modüller</h4>\n' +
-        '<p>TypeScript ile kodunuzu modüller halinde organize edebilirsiniz:</p>\n' +
-        '<p>math.ts:</p>\n' +
-        '<pre>export function carp(a: number, b: number): number {<br>  return a * b;<br>}</pre>\n' +
-        '<p>main.ts:</p>\n' +
-        "<pre>import { carp } from './math';<br><br>let sonuc = carp(5, 3);<br>console.log(sonuc); // 15</pre>\n" +
-        '<p>Bu örnekler, TypeScript’in sunduğu güçlü özelliklerin sadece bir kısmını göstermektedir. Bu özellikler sayesinde, özellikle büyük projelerde, daha güvenli, okunabilir ve sürdürülebilir kod yazabilirsiniz.</p>\n' +
-        '<h3>Sonuç</h3>\n' +
-        '<p>TypeScript, modern web geliştirme dünyasında giderek daha fazla önem kazanıyor. Statik tip kontrolü, gelişmiş IDE desteği ve daha iyi proje yönetimi özellikleriyle, özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline geliyor. Eğer daha güvenli, ölçeklenebilir ve sürdürülebilir projeler geliştirmek istiyorsanız, TypeScript kesinlikle değerlendirmeniz gereken bir teknoloji. Her şeyi bir yana bırakıp şunu da unutmamak lazım, typescript çoğu zaman fayda getiriyor olsa bile tüm projelerde bence gereklilik değildir.</p>\n' +
-        '<p>Bunlara da bakabilirsin</p>\n' +
-        '<p><a href="https://x.com/cangureltxt">X</a> | <a href="https://www.linkedin.com/in/acangurel">LinkedIn</a> | <a href="https://youtube.com/@acangurel">YouTube</a> | <a href="https://github.com/ahmetcangurel">Github</a></p>\n' +
-        '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a881c6660728" width="1" height="1" alt="">\n',
-      content: '\n' +
-        '<figure><img alt="" src="https://cdn-images-1.medium.com/max/369/1*96-x1bds6xdfklvTorUUlQ@2x.jpeg"></figure><p>JavaScript, web geliştirme dünyasının tartışmasız en popüler dillerinden biri. Ancak büyük ve karmaşık projelerde, JavaScript’in dinamik yapısı ve zayıf tip kontrolü zaman zaman zorluklar çıkarabiliyor. İşte tam bu noktada TypeScript devreye giriyor.</p>\n' +
-        '<h3>TypeScript Nedir?</h3>\n' +
-        '<p>Microsoft tarafından geliştirilen TypeScript, JavaScript’in bir üst kümesi olarak tanımlanabilir. En önemli özelliği, JavaScript’e statik tip desteği eklemesi. Bu özellik, onu özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline getiriyor.</p>\n' +
-        '<h3>Neden TypeScript Kullanmalıyız?</h3>\n' +
-        '<h4>1. Statik Tip Kontrolü</h4>\n' +
-        '<p>TypeScript’in en güçlü yanlarından biri, statik tip kontrolü. JavaScript’te değişkenlerin türü çalışma zamanında belirlenirken, TypeScript ile bu işlemi geliştirme aşamasında yapabiliyoruz. Örneğin:</p>\n' +
-        '<pre>let name: string = "Can";<br>name = 5; <br>// ‘name’ değişkeni string tipinde olduğu için hata verecektir. </pre>\n' +
-        '<p>Bu sayede, potansiyel hataları daha erken yakalayabiliyoruz.</p>\n' +
-        '<h4>2. Gelişmiş Hata Ayıklama</h4>\n' +
-        '<p>Statik tip kontrolü, hata ayıklama sürecini de oldukça kolaylaştırıyor. Derleyici, olası hataları geliştirme aşamasında göstererek, uygulamanın kararlılığını artırıyor.</p>\n' +
-        '<h4>3. Güçlü IDE Desteği</h4>\n' +
-        '<p>TypeScript, modern geliştirme ortamlarıyla mükemmel bir uyum içinde çalışıyor. Özellikle Visual Studio Code gibi editörlerde, IntelliSense özelliği sayesinde daha doğru kod tamamlama önerileri alabiliyoruz.</p>\n' +
-        '<h4>4. Daha İyi Proje Ölçeklenebilirliği</h4>\n' +
-        '<p>Büyük projelerde TypeScript, daha iyi bir kod organizasyonu sağlıyor. OOP kavramlarını kullanarak, projeleri daha yapılandırılmış hale getirebiliyoruz. Bu da takım çalışmasında ve kodun sürdürülebilirliğinde büyük avantaj sağlıyor.</p>\n' +
-        '<h3>TypeScript’in Diğer Avantajları</h3>\n' +
-        '<ul>\n' +
-        '<li>ES6+ Uyumluluğu : TypeScript, modern JavaScript özelliklerini tam olarak destekliyor.</li>\n' +
-        '<li>JavaScript ile Uyumluluk : Herhangi bir JavaScript dosyasını kolayca TypeScript’e dönüştürebilirsiniz.</li>\n' +
-        '<li>Kodun Okunabilirliği : Tip anotasyonları sayesinde, kodun ne yaptığı daha açık hale geliyor.</li>\n' +
-        '</ul>\n' +
-        '<h3>TypeScript’in Temel Özellikleri ve Kullanım Örnekleri</h3>\n' +
-        '<p>TypeScript’in gücünü daha iyi anlamak için bazı temel özelliklerini ve kullanım örneklerini inceleyelim:</p>\n' +
-        '<h4>1. Temel Tipler ile Değişken Tanımlama</h4>\n' +
-        `<pre>let isim: string = "Can";<br>let yas: number = 30;<br>let aktif: boolean = true;<br><br>// isim = 25; // Hata verir, çünkü 'isim' string tipinde tanımlandı.</pre>\n` +
-        '<h4>2. Fonksiyonlarda Tip Belirleme</h4>\n' +
-        '<pre>function toplama(a: number, b: number): number {<br>  return a + b;<br>}<br><br>let sonuc = toplama(5, 10); // Sonuç 15</pre>\n' +
-        '<h4>3. Arayüzler (Interfaces)</h4>\n' +
-        '<pre>interface Kullanici {<br>  isim: string;<br>  yas: number;<br>  aktifMi: boolean;<br>}<br><br>const kullanici: Kullanici = {<br>  isim: "Ahmet",<br>  yas: 25,<br>  aktifMi: true,<br>};</pre>\n' +
-        '<h4>4. Birleşik Tipler (Union Types)</h4>\n' +
-        '<pre>let kimlik: number | string;<br>kimlik = 123;<br>kimlik = "ABC123";</pre>\n' +
-        '<h4>5. Generics</h4>\n' +
-        '<pre>function veriDondur&lt;T&gt;(deger: T): T {<br>  return deger;<br>}<br><br>let sayi = veriDondur&lt;number&gt;(10);<br>let metin = veriDondur&lt;string&gt;("Merhaba");</pre>\n' +
-        '<h4>6. Tip Sorgulama (Type Assertions)</h4>\n' +
-        '<pre>let deger: any = "Merhaba Dünya";<br>let uzunluk: number = (deger as string).length;<br><br>console.log(uzunluk); // 13</pre>\n' +
-        '<h4>7. Modüller</h4>\n' +
-        '<p>TypeScript ile kodunuzu modüller halinde organize edebilirsiniz:</p>\n' +
-        '<p>math.ts:</p>\n' +
-        '<pre>export function carp(a: number, b: number): number {<br>  return a * b;<br>}</pre>\n' +
-        '<p>main.ts:</p>\n' +
-        "<pre>import { carp } from './math';<br><br>let sonuc = carp(5, 3);<br>console.log(sonuc); // 15</pre>\n" +
-        '<p>Bu örnekler, TypeScript’in sunduğu güçlü özelliklerin sadece bir kısmını göstermektedir. Bu özellikler sayesinde, özellikle büyük projelerde, daha güvenli, okunabilir ve sürdürülebilir kod yazabilirsiniz.</p>\n' +
-        '<h3>Sonuç</h3>\n' +
-        '<p>TypeScript, modern web geliştirme dünyasında giderek daha fazla önem kazanıyor. Statik tip kontrolü, gelişmiş IDE desteği ve daha iyi proje yönetimi özellikleriyle, özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline geliyor. Eğer daha güvenli, ölçeklenebilir ve sürdürülebilir projeler geliştirmek istiyorsanız, TypeScript kesinlikle değerlendirmeniz gereken bir teknoloji. Her şeyi bir yana bırakıp şunu da unutmamak lazım, typescript çoğu zaman fayda getiriyor olsa bile tüm projelerde bence gereklilik değildir.</p>\n' +
-        '<p>Bunlara da bakabilirsin</p>\n' +
-        '<p><a href="https://x.com/cangureltxt">X</a> | <a href="https://www.linkedin.com/in/acangurel">LinkedIn</a> | <a href="https://youtube.com/@acangurel">YouTube</a> | <a href="https://github.com/ahmetcangurel">Github</a></p>\n' +
-        '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a881c6660728" width="1" height="1" alt="">\n',
-      enclosure: {},
-      categories: [
-        'react-native',
-        'typescript',
-        'programming',
-        'javascript',
-        'typescript-tips'
-      ]
+        title: 'TypeScript: Modern Web Geliştirmenin Güçlü Silahı',
+        pubDate: '2024-10-22 18:26:19',
+        link: 'https://medium.com/@cangurel.dev/typescript-modern-web-geli%C5%9Ftirmenin-g%C3%BC%C3%A7l%C3%BC-silah%C4%B1-a881c6660728?source=rss-8a6773e97c0d------2',
+        guid: 'https://medium.com/p/a881c6660728',
+        author: 'Can Gurel',
+        thumbnail: '',
+        description: '\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/369/1*96-x1bds6xdfklvTorUUlQ@2x.jpeg"></figure><p>JavaScript, web geliştirme dünyasının tartışmasız en popüler dillerinden biri. Ancak büyük ve karmaşık projelerde, JavaScript’in dinamik yapısı ve zayıf tip kontrolü zaman zaman zorluklar çıkarabiliyor. İşte tam bu noktada TypeScript devreye giriyor.</p>\n' +
+            '<h3>TypeScript Nedir?</h3>\n' +
+            '<p>Microsoft tarafından geliştirilen TypeScript, JavaScript’in bir üst kümesi olarak tanımlanabilir. En önemli özelliği, JavaScript’e statik tip desteği eklemesi. Bu özellik, onu özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline getiriyor.</p>\n' +
+            '<h3>Neden TypeScript Kullanmalıyız?</h3>\n' +
+            '<h4>1. Statik Tip Kontrolü</h4>\n' +
+            '<p>TypeScript’in en güçlü yanlarından biri, statik tip kontrolü. JavaScript’te değişkenlerin türü çalışma zamanında belirlenirken, TypeScript ile bu işlemi geliştirme aşamasında yapabiliyoruz. Örneğin:</p>\n' +
+            '<pre>let name: string = "Can";<br>name = 5; <br>// ‘name’ değişkeni string tipinde olduğu için hata verecektir. </pre>\n' +
+            '<p>Bu sayede, potansiyel hataları daha erken yakalayabiliyoruz.</p>\n' +
+            '<h4>2. Gelişmiş Hata Ayıklama</h4>\n' +
+            '<p>Statik tip kontrolü, hata ayıklama sürecini de oldukça kolaylaştırıyor. Derleyici, olası hataları geliştirme aşamasında göstererek, uygulamanın kararlılığını artırıyor.</p>\n' +
+            '<h4>3. Güçlü IDE Desteği</h4>\n' +
+            '<p>TypeScript, modern geliştirme ortamlarıyla mükemmel bir uyum içinde çalışıyor. Özellikle Visual Studio Code gibi editörlerde, IntelliSense özelliği sayesinde daha doğru kod tamamlama önerileri alabiliyoruz.</p>\n' +
+            '<h4>4. Daha İyi Proje Ölçeklenebilirliği</h4>\n' +
+            '<p>Büyük projelerde TypeScript, daha iyi bir kod organizasyonu sağlıyor. OOP kavramlarını kullanarak, projeleri daha yapılandırılmış hale getirebiliyoruz. Bu da takım çalışmasında ve kodun sürdürülebilirliğinde büyük avantaj sağlıyor.</p>\n' +
+            '<h3>TypeScript’in Diğer Avantajları</h3>\n' +
+            '<ul>\n' +
+            '<li>ES6+ Uyumluluğu : TypeScript, modern JavaScript özelliklerini tam olarak destekliyor.</li>\n' +
+            '<li>JavaScript ile Uyumluluk : Herhangi bir JavaScript dosyasını kolayca TypeScript’e dönüştürebilirsiniz.</li>\n' +
+            '<li>Kodun Okunabilirliği : Tip anotasyonları sayesinde, kodun ne yaptığı daha açık hale geliyor.</li>\n' +
+            '</ul>\n' +
+            '<h3>TypeScript’in Temel Özellikleri ve Kullanım Örnekleri</h3>\n' +
+            '<p>TypeScript’in gücünü daha iyi anlamak için bazı temel özelliklerini ve kullanım örneklerini inceleyelim:</p>\n' +
+            '<h4>1. Temel Tipler ile Değişken Tanımlama</h4>\n' +
+            `<pre>let isim: string = "Can";<br>let yas: number = 30;<br>let aktif: boolean = true;<br><br>// isim = 25; // Hata verir, çünkü 'isim' string tipinde tanımlandı.</pre>\n` +
+            '<h4>2. Fonksiyonlarda Tip Belirleme</h4>\n' +
+            '<pre>function toplama(a: number, b: number): number {<br>  return a + b;<br>}<br><br>let sonuc = toplama(5, 10); // Sonuç 15</pre>\n' +
+            '<h4>3. Arayüzler (Interfaces)</h4>\n' +
+            '<pre>interface Kullanici {<br>  isim: string;<br>  yas: number;<br>  aktifMi: boolean;<br>}<br><br>const kullanici: Kullanici = {<br>  isim: "Ahmet",<br>  yas: 25,<br>  aktifMi: true,<br>};</pre>\n' +
+            '<h4>4. Birleşik Tipler (Union Types)</h4>\n' +
+            '<pre>let kimlik: number | string;<br>kimlik = 123;<br>kimlik = "ABC123";</pre>\n' +
+            '<h4>5. Generics</h4>\n' +
+            '<pre>function veriDondur&lt;T&gt;(deger: T): T {<br>  return deger;<br>}<br><br>let sayi = veriDondur&lt;number&gt;(10);<br>let metin = veriDondur&lt;string&gt;("Merhaba");</pre>\n' +
+            '<h4>6. Tip Sorgulama (Type Assertions)</h4>\n' +
+            '<pre>let deger: any = "Merhaba Dünya";<br>let uzunluk: number = (deger as string).length;<br><br>console.log(uzunluk); // 13</pre>\n' +
+            '<h4>7. Modüller</h4>\n' +
+            '<p>TypeScript ile kodunuzu modüller halinde organize edebilirsiniz:</p>\n' +
+            '<p>math.ts:</p>\n' +
+            '<pre>export function carp(a: number, b: number): number {<br>  return a * b;<br>}</pre>\n' +
+            '<p>main.ts:</p>\n' +
+            "<pre>import { carp } from './math';<br><br>let sonuc = carp(5, 3);<br>console.log(sonuc); // 15</pre>\n" +
+            '<p>Bu örnekler, TypeScript’in sunduğu güçlü özelliklerin sadece bir kısmını göstermektedir. Bu özellikler sayesinde, özellikle büyük projelerde, daha güvenli, okunabilir ve sürdürülebilir kod yazabilirsiniz.</p>\n' +
+            '<h3>Sonuç</h3>\n' +
+            '<p>TypeScript, modern web geliştirme dünyasında giderek daha fazla önem kazanıyor. Statik tip kontrolü, gelişmiş IDE desteği ve daha iyi proje yönetimi özellikleriyle, özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline geliyor. Eğer daha güvenli, ölçeklenebilir ve sürdürülebilir projeler geliştirmek istiyorsanız, TypeScript kesinlikle değerlendirmeniz gereken bir teknoloji. Her şeyi bir yana bırakıp şunu da unutmamak lazım, typescript çoğu zaman fayda getiriyor olsa bile tüm projelerde bence gereklilik değildir.</p>\n' +
+            '<p>Bunlara da bakabilirsin</p>\n' +
+            '<p><a href="https://x.com/cangureltxt">X</a> | <a href="https://www.linkedin.com/in/acangurel">LinkedIn</a> | <a href="https://youtube.com/@acangurel">YouTube</a> | <a href="https://github.com/ahmetcangurel">Github</a></p>\n' +
+            '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a881c6660728" width="1" height="1" alt="">\n',
+        content: '\n' +
+            '<figure><img alt="" src="https://cdn-images-1.medium.com/max/369/1*96-x1bds6xdfklvTorUUlQ@2x.jpeg"></figure><p>JavaScript, web geliştirme dünyasının tartışmasız en popüler dillerinden biri. Ancak büyük ve karmaşık projelerde, JavaScript’in dinamik yapısı ve zayıf tip kontrolü zaman zaman zorluklar çıkarabiliyor. İşte tam bu noktada TypeScript devreye giriyor.</p>\n' +
+            '<h3>TypeScript Nedir?</h3>\n' +
+            '<p>Microsoft tarafından geliştirilen TypeScript, JavaScript’in bir üst kümesi olarak tanımlanabilir. En önemli özelliği, JavaScript’e statik tip desteği eklemesi. Bu özellik, onu özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline getiriyor.</p>\n' +
+            '<h3>Neden TypeScript Kullanmalıyız?</h3>\n' +
+            '<h4>1. Statik Tip Kontrolü</h4>\n' +
+            '<p>TypeScript’in en güçlü yanlarından biri, statik tip kontrolü. JavaScript’te değişkenlerin türü çalışma zamanında belirlenirken, TypeScript ile bu işlemi geliştirme aşamasında yapabiliyoruz. Örneğin:</p>\n' +
+            '<pre>let name: string = "Can";<br>name = 5; <br>// ‘name’ değişkeni string tipinde olduğu için hata verecektir. </pre>\n' +
+            '<p>Bu sayede, potansiyel hataları daha erken yakalayabiliyoruz.</p>\n' +
+            '<h4>2. Gelişmiş Hata Ayıklama</h4>\n' +
+            '<p>Statik tip kontrolü, hata ayıklama sürecini de oldukça kolaylaştırıyor. Derleyici, olası hataları geliştirme aşamasında göstererek, uygulamanın kararlılığını artırıyor.</p>\n' +
+            '<h4>3. Güçlü IDE Desteği</h4>\n' +
+            '<p>TypeScript, modern geliştirme ortamlarıyla mükemmel bir uyum içinde çalışıyor. Özellikle Visual Studio Code gibi editörlerde, IntelliSense özelliği sayesinde daha doğru kod tamamlama önerileri alabiliyoruz.</p>\n' +
+            '<h4>4. Daha İyi Proje Ölçeklenebilirliği</h4>\n' +
+            '<p>Büyük projelerde TypeScript, daha iyi bir kod organizasyonu sağlıyor. OOP kavramlarını kullanarak, projeleri daha yapılandırılmış hale getirebiliyoruz. Bu da takım çalışmasında ve kodun sürdürülebilirliğinde büyük avantaj sağlıyor.</p>\n' +
+            '<h3>TypeScript’in Diğer Avantajları</h3>\n' +
+            '<ul>\n' +
+            '<li>ES6+ Uyumluluğu : TypeScript, modern JavaScript özelliklerini tam olarak destekliyor.</li>\n' +
+            '<li>JavaScript ile Uyumluluk : Herhangi bir JavaScript dosyasını kolayca TypeScript’e dönüştürebilirsiniz.</li>\n' +
+            '<li>Kodun Okunabilirliği : Tip anotasyonları sayesinde, kodun ne yaptığı daha açık hale geliyor.</li>\n' +
+            '</ul>\n' +
+            '<h3>TypeScript’in Temel Özellikleri ve Kullanım Örnekleri</h3>\n' +
+            '<p>TypeScript’in gücünü daha iyi anlamak için bazı temel özelliklerini ve kullanım örneklerini inceleyelim:</p>\n' +
+            '<h4>1. Temel Tipler ile Değişken Tanımlama</h4>\n' +
+            `<pre>let isim: string = "Can";<br>let yas: number = 30;<br>let aktif: boolean = true;<br><br>// isim = 25; // Hata verir, çünkü 'isim' string tipinde tanımlandı.</pre>\n` +
+            '<h4>2. Fonksiyonlarda Tip Belirleme</h4>\n' +
+            '<pre>function toplama(a: number, b: number): number {<br>  return a + b;<br>}<br><br>let sonuc = toplama(5, 10); // Sonuç 15</pre>\n' +
+            '<h4>3. Arayüzler (Interfaces)</h4>\n' +
+            '<pre>interface Kullanici {<br>  isim: string;<br>  yas: number;<br>  aktifMi: boolean;<br>}<br><br>const kullanici: Kullanici = {<br>  isim: "Ahmet",<br>  yas: 25,<br>  aktifMi: true,<br>};</pre>\n' +
+            '<h4>4. Birleşik Tipler (Union Types)</h4>\n' +
+            '<pre>let kimlik: number | string;<br>kimlik = 123;<br>kimlik = "ABC123";</pre>\n' +
+            '<h4>5. Generics</h4>\n' +
+            '<pre>function veriDondur&lt;T&gt;(deger: T): T {<br>  return deger;<br>}<br><br>let sayi = veriDondur&lt;number&gt;(10);<br>let metin = veriDondur&lt;string&gt;("Merhaba");</pre>\n' +
+            '<h4>6. Tip Sorgulama (Type Assertions)</h4>\n' +
+            '<pre>let deger: any = "Merhaba Dünya";<br>let uzunluk: number = (deger as string).length;<br><br>console.log(uzunluk); // 13</pre>\n' +
+            '<h4>7. Modüller</h4>\n' +
+            '<p>TypeScript ile kodunuzu modüller halinde organize edebilirsiniz:</p>\n' +
+            '<p>math.ts:</p>\n' +
+            '<pre>export function carp(a: number, b: number): number {<br>  return a * b;<br>}</pre>\n' +
+            '<p>main.ts:</p>\n' +
+            "<pre>import { carp } from './math';<br><br>let sonuc = carp(5, 3);<br>console.log(sonuc); // 15</pre>\n" +
+            '<p>Bu örnekler, TypeScript’in sunduğu güçlü özelliklerin sadece bir kısmını göstermektedir. Bu özellikler sayesinde, özellikle büyük projelerde, daha güvenli, okunabilir ve sürdürülebilir kod yazabilirsiniz.</p>\n' +
+            '<h3>Sonuç</h3>\n' +
+            '<p>TypeScript, modern web geliştirme dünyasında giderek daha fazla önem kazanıyor. Statik tip kontrolü, gelişmiş IDE desteği ve daha iyi proje yönetimi özellikleriyle, özellikle büyük ölçekli projelerde tercih edilen bir seçenek haline geliyor. Eğer daha güvenli, ölçeklenebilir ve sürdürülebilir projeler geliştirmek istiyorsanız, TypeScript kesinlikle değerlendirmeniz gereken bir teknoloji. Her şeyi bir yana bırakıp şunu da unutmamak lazım, typescript çoğu zaman fayda getiriyor olsa bile tüm projelerde bence gereklilik değildir.</p>\n' +
+            '<p>Bunlara da bakabilirsin</p>\n' +
+            '<p><a href="https://x.com/cangureltxt">X</a> | <a href="https://www.linkedin.com/in/acangurel">LinkedIn</a> | <a href="https://youtube.com/@acangurel">YouTube</a> | <a href="https://github.com/ahmetcangurel">Github</a></p>\n' +
+            '<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=a881c6660728" width="1" height="1" alt="">\n',
+        enclosure: {},
+        categories: [
+            'react-native',
+            'typescript',
+            'programming',
+            'javascript',
+            'typescript-tips'
+        ]
     }
-  ]
+]

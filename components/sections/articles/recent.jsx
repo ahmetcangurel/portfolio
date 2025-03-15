@@ -33,7 +33,7 @@ export default function Recent({ mediumArticles }) {
                   <article key={index} className={css.project}>
                     <span className={css.featuredImage}>
                       <img
-                        src={thumbnail || "/img/medium-mock.png"}
+                        src={thumbnail || "/img/medium-mock.png"}
                         alt="Article thumbnail"
                       />
                     </span>

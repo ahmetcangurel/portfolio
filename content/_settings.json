@@ -1,15 +1,15 @@
 {
-    "name": "Can Gürel",
-    "logo": "",
+  "name": "Can Gürel",
+  "logo": "",
 
-    "username": {
-        "github": "ahmetcangurel",
-        "medium": "@cangurel.dev"
-    },
+  "username": {
+    "github": "ahmetcangurel",
+    "medium": "@cangurel.dev"
+  },
 
-    "portfolio": {
-        "forkthis": "Steal this theme! Its open-source 🥰",
-        "repo_html": "https://github.com/ahmetcangurel/portfolio",
-        "repo_api": "https://api.github.com/repos/ahmetcangurel/portfolio"
-    }
+  "portfolio": {
+    "forkthis": "Steal this theme! Its open-source 🥰",
+    "repo_html": "https://github.com/ahmetcangurel/portfolio",
+    "repo_api": "https://api.github.com/repos/ahmetcangurel/portfolio"
+  }
 }
