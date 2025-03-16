@@ -9,9 +9,9 @@
 
   "links": [
     {
-      "person": "YWFT Creative Marketplace",
-      "link": "https://www.youworkforthem.com/?aff=1115",
-      "note": "Best in class creative assets."
+      "person": "Shudcn UI Library",
+      "link": "https://ui.shadcn.com/",
+      "note": "Works with your favorite frameworks. Open Source. Open Code."
     }
   ],
 
@@ -19,10 +19,6 @@
     {
       "url": "https://medium.com/@cangurel.dev",
       "icon": "medium"
-    },
-    {
-      "url": "https://dev.to/cangurel",
-      "icon": "dev"
     },
     {
       "url": "https://www.linkedin.com/in/acangurel/",

@@ -87,7 +87,7 @@ export default function HomePage({
       <Navbar />
       <Color colors={colors} />
       <Hero />
-      <Looking />
+      {/* <Looking /> */}
       {/* <FeaturedProjects /> */}
       <About />
       <RecentArticles mediumArticles={mediumArticles} />

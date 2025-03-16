@@ -30,20 +30,20 @@ export default function About() {
         <SectionTitle
           title="About Me"
           preTitle="Synopsis"
-          subTitle="With a diverse skill set that includes UX design, UI design, full stack development, operational architecture, systems design, photography, and branding, I am a well-rounded digital professional."
+          subTitle="With expertise in React Native, full-stack development, system architecture, and branding, I am a versatile software developer and consultant dedicated to creating high-quality digital experiences."
         />
         <section className={about.content}>
           <div className={about.image}>
-            <img src="/img/family-photo.jpg" alt="Nelson family photo" />
+            <img src="/img/can_profile.jpg" alt="Nelson family photo" />
             {/* <Image src="/img/family-photo.jpg" width={600} height={800}/> */}
           </div>
           <div className={about.copy}>
             <CopyBlock
-              title="Softskills that pay the bills"
+              title="Softskills That Drive Success"
               containerClass={about.container}
               iconClass={about.icon}
               icon={["fat", "ear-listen"]}
-              copy="In addition to my design and technical expertise—I also have strong leadership, time management, and multitasking skills—honed through my experience as a business owner / managing partner, husband, and father of two. Outside of work, I enjoy staying active through sports such as hockey and snowboarding. I am confident in my ability to bring passion and value to any project."
+              copy="Beyond my technical expertise in React Native and full-stack development, I have strong leadership, time management, and problem-solving skills—sharpened through my experience as a consultant, entrepreneur, and open-source contributor. Outside of work, I enjoy staying active and continuously exploring new technologies. I am confident in my ability to bring innovation and value to any project."
             />
             <BadgesBlock
               title="Reasearch and planning"
@@ -64,10 +64,10 @@ export default function About() {
 }
 
 const methods = [
-  { key: "planet-moon", name: "User Research", type: "fad" },
-  { key: "qrcode", name: "Digital Strategy", type: "fad" },
-  { key: "window", name: "Design Systems", type: "fad" },
-  { key: "cubes", name: "Product Strategy", type: "far" },
-  { key: "layer-plus", name: "Brand Strategy", type: "fad" },
-  { key: "solar-system", name: "Operations", type: "fad" },
+  { key: "planet-moon", name: "React Native Development", type: "fad" },
+  { key: "qrcode", name: "Full-Stack Development", type: "fad" },
+  { key: "window", name: "System Architecture", type: "far" },
+  { key: "cubes", name: "Consulting & Strategy", type: "fad" },
+  { key: "layer-plus", name: "Open-Source Contribution", type: "fad" },
+  { key: "solar-system", name: "App Development", type: "fad" },
 ];

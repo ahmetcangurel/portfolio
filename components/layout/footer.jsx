@@ -35,7 +35,7 @@ export default function Footer() {
             <li>
               <h4>Acknowledgments</h4>
             </li>
-            {content.acknowledgments.map(({ person, link, note }, index) => {
+            {/* {content.acknowledgments.map(({ person, link, note }, index) => {
               return (
                 <li key={index}>
                   <a href={link} rel="noreferrer" target="_blank">
@@ -45,7 +45,7 @@ export default function Footer() {
                   <p>{note}</p>
                 </li>
               );
-            })}
+            })} */}
           </ul>
           <ul className={css.links}>
             <li>
