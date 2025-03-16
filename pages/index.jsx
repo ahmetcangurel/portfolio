@@ -11,6 +11,8 @@ import Color from "../components/utils/page.colors.util";
 import settings from "../content/_settings.json";
 
 import colors from "../content/index/_colors.json";
+import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 
 export async function getStaticProps() {
   try {
@@ -19,6 +21,7 @@ export async function getStaticProps() {
     const response = await fetch(
       `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUsername}`
     );
+    console.log(response.json());
     const mediumArticles = await response.json();
 
     // GitHub kullanıcı bilgileri için
@@ -59,9 +62,9 @@ export async function getStaticProps() {
         mediumArticles: { items: [] },
         githubProjects: [],
         githubUser: {
-          avatar_url: "/img/github-default.png",
-          name: "GitHub User",
-          html_url: "https://github.com",
+          avatar_url: "https://avatars.githubusercontent.com/u/91556629?v=4",
+          name: "Can Gürel",
+          html_url: "https://github.com/ahmetcangurel",
         },
       },
       revalidate: 3600,
@@ -76,15 +79,17 @@ export default function HomePage({
 }) {
   return (
     <>
+      <Navbar />
       <Color colors={colors} />
       <Hero />
       <Looking />
-      <FeaturedProjects />
+      {/* <FeaturedProjects /> */}
       <About />
       <RecentArticles mediumArticles={mediumArticles} />
       <GitProjects repos={githubProjects} user={[githubUser]} />
-      <Technical />
-      <Career />
+      {/* <Technical /> */}
+      {/* <Career /> */}
+      <Footer />
     </>
   );
 }
