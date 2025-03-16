@@ -75,7 +75,7 @@ export default function Hero() {
         <section>
           <button
             className={`button ${button.primary}`}
-            onClick={() => (window.location = "mailto:hello@andrewnelson.net")}
+            onClick={() => (window.location = "mailto:hello@cangurel.dev")}
           >
             {content.buttons.primary.title}
           </button>
