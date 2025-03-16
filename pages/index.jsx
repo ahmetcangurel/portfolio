@@ -21,8 +21,13 @@ export async function getStaticProps() {
     const response = await fetch(
       `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUsername}`
     );
-    console.log(response.json());
+
+    if (!response.ok) {
+      throw new Error(`Medium API error: ${response.statusText}`);
+    }
+
     const mediumArticles = await response.json();
+    console.log("Medium Articles:", mediumArticles);
 
     // GitHub kullanıcı bilgileri için
     const githubUsername = "ahmetcangurel";
