@@ -24,6 +24,7 @@ import "../node_modules/devicon/devicon.min.css";
 // Global css
 import "../styles/css/variables.css";
 import "../styles/css/global.css";
+import Head from "next/head";
 
 /**
  * _app.jsx
@@ -35,6 +36,9 @@ import "../styles/css/global.css";
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>Can Gürel - Portfolio - cangurel.dev</title>
+      </Head>
       <LazyMotion features={domAnimation}>
         <Layout>
           <Component {...pageProps} />
